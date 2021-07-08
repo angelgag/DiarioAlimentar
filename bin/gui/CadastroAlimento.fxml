@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.CadastroAlimentoController">
+   <children>
+      <TextField fx:id="txtNome" layoutX="257.0" layoutY="277.0" prefHeight="25.0" prefWidth="180.0" promptText="nome" />
+      <Label fx:id="lbCadastro" layoutX="340.0" layoutY="221.0" prefHeight="27.0" prefWidth="227.0" text="CADASTRO DE ALIMENTO">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtPeso" layoutX="258.0" layoutY="311.0" prefHeight="25.0" prefWidth="180.0" promptText="peso" />
+      <TextField fx:id="txtCarboidrato" layoutX="258.0" layoutY="345.0" prefHeight="25.0" prefWidth="180.0" promptText="carboidrato" />
+      <TextField fx:id="txtCalorias" layoutX="470.0" layoutY="277.0" prefHeight="25.0" prefWidth="180.0" promptText="calorias" />
+      <TextField fx:id="txtGordura" layoutX="471.0" layoutY="311.0" prefHeight="25.0" prefWidth="180.0" promptText="gordura" />
+      <TextField fx:id="txtProteina" layoutX="471.0" layoutY="345.0" prefHeight="25.0" prefWidth="180.0" promptText="proteina" />
+      <Button fx:id="btnVoltar" layoutX="323.0" layoutY="394.0" mnemonicParsing="false" onAction="#btnConcluirCClick" text="Voltar" />
+      <Button fx:id="btnSalvar" layoutX="536.0" layoutY="394.0" mnemonicParsing="false" onAction="#btnConcluirNClick" text="Salvar" />
+   </children>
+</Pane>
