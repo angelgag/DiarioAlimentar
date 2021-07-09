@@ -130,6 +130,7 @@ public class CadastroController {
         	txtAlturaC.setDisable(false);
         	btnConcluirC.setDisable(false);
         	
+        	btnConcluirN.setDisable(true);
         	txtNomeN.setDisable(true);
         	txtEmailN.setDisable(true);
         	txtSenhaN.setDisable(true);
@@ -159,6 +160,7 @@ public class CadastroController {
         	txtAlturaC.setDisable(true);
         	btnConcluirC.setDisable(true);
         	
+        	btnConcluirN.setDisable(false);
         	txtNomeN.setDisable(false);
         	txtEmailN.setDisable(false);
         	txtSenhaN.setDisable(false);
