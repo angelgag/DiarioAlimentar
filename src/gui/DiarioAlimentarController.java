@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import repositorios.RepositorioAlimento;
 
 /*import repositorios.RepositorioAlimento;
 import repositorios.RepositorioUsuario;
@@ -25,25 +26,82 @@ public class DiarioAlimentarController implements Initializable {
 	
 	//criando elementos da tela
 	@FXML
-	Button btnSalvar;
-	@FXML
-	Button btnVoltar;
+	Button btnSalvar, btnVoltar, btnAdicionarCafeDaManha, btnAdicionarAlmoco, btnAdicionarJanta, btnAdicionarLanche,
+	btnExcluiCafeDaManha, btnExcluiAlmoco, btnExcluiJanta, btnExcluiLanche;
+	
 	@FXML
 	TableView<Alimento> tvCafeDaManha;
 	@FXML
-	TableColumn<Alimento, String> tcListaCafeDaManha;
+	TableColumn<Alimento, String> tcCafeDaManha;
+	@FXML
+	TableColumn<Alimento, String> tcCDMCalorias;
+	@FXML
+	TableColumn<Alimento, String> tcCDMCarboidrato;
+	@FXML
+	TableColumn<Alimento, String> tcCDMProteina;
+	@FXML
+	TableColumn<Alimento, String> tcCDMGordura;
+	@FXML
+	TableColumn<Alimento, String> tcCDMPorcao;
+	@FXML
+	TableColumn<Alimento, String> tcCDMExcluir;
+	
 	@FXML
 	TableView<Alimento> tvAlmoco;
 	@FXML
-	TableColumn<Alimento, String> tcListaAlmoco;
+	TableColumn<Alimento, String> tcAlmoco;
+	@FXML
+	TableColumn<Alimento, String> tcACalorias;
+	@FXML
+	TableColumn<Alimento, String> tcACarboidrato;
+	@FXML
+	TableColumn<Alimento, String> tcAProteina;
+	@FXML
+	TableColumn<Alimento, String> tcAGordura;
+	@FXML
+	TableColumn<Alimento, String> tcAPorcao;
+	@FXML
+	TableColumn<Alimento, String> tcAExcluir;
+	
 	@FXML
 	TableView<Alimento> tvJanta;
 	@FXML
-	TableColumn<Alimento, String> tcListaJanta;
+	TableColumn<Alimento, String> tcJanta;
+	@FXML
+	TableColumn<Alimento, String> tcJCalorias;
+	@FXML
+	TableColumn<Alimento, String> tcJCarboidrato;
+	@FXML
+	TableColumn<Alimento, String> tcJProteina;
+	@FXML
+	TableColumn<Alimento, String> tcJGordura;
+	@FXML
+	TableColumn<Alimento, String> tcJPorcao;
+	@FXML
+	TableColumn<Alimento, String> tcJExcluir;
+	
 	@FXML
 	TableView<Alimento> tvLanche;
 	@FXML
-	TableColumn<Alimento, String> tcListaLanche;
+	TableColumn<Alimento, String> tcLanche;
+	@FXML
+	TableColumn<Alimento, String> tcLCalorias;
+	@FXML
+	TableColumn<Alimento, String> tcLCarboidrato;
+	@FXML
+	TableColumn<Alimento, String> tcLProteina;
+	@FXML
+	TableColumn<Alimento, String> tcLGordura;
+	@FXML
+	TableColumn<Alimento, String> tcLPorcao;
+	@FXML
+	TableColumn<Alimento, String> tcLExcluir;
+	
+//----------------------------------------------------------------------
+	@FXML
+	TableView<Alimento> tvListaAlimentos;
+	@FXML
+	TableColumn<Alimento, String> tcListaAimentos;	
 	
 	//metodo que salva as alteracoes do diario alimentar
 	@FXML
@@ -58,27 +116,24 @@ public class DiarioAlimentarController implements Initializable {
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
-		tcListaAlmoco.setCellValueFactory(new PropertyValueFactory<>("nome"));
-		tcListaCafeDaManha.setCellValueFactory(new PropertyValueFactory<>("nome"));
-		tcListaJanta.setCellValueFactory(new PropertyValueFactory<>("nome"));
-		tcListaLanche.setCellValueFactory(new PropertyValueFactory<>("nome"));
-		/*
-		tvCafeDaManha.setItems(ListaDeAlimentos());
-		tvAlmoco.setItems(ListaDeAlimentos());
-		tvJanta.setItems(ListaDeAlimentos());
-		tvLanche.setItems(ListaDeAlimentos());
-		*/
+		
+		tvListaAlimentos.setItems(getAlimentos());
+		
 	}
-	/*
-	private ObservableList<Alimento> ListaDeAlimentos(){
-		return FXCollections.observableArrayList(
+	
+	private ObservableList<Alimento> getAlimentos(){
+		ObservableList<Alimento> alimentos =FXCollections.observableArrayList();
+		//double totalCarboidrato, total;
+		alimentos.addAll(RepositorioAlimento.getInstance().recover());
+		return alimentos;
+		 
+		/*return FXCollections.observableArrayList(
 				new Alimento("feijão", 10, 20, 30, 40, 50, 70, 60),
 				new Alimento("arroz", 10, 20, 30, 40, 50, 70, 60),
 				new Alimento("macarrão", 10, 20, 30, 40, 50, 70, 60),
 				new Alimento("maçã", 10, 20, 30, 40, 50, 70, 60),
 				new Alimento("peixe", 10, 20, 30, 40, 50, 70, 60)
-				);
-	}*/
+				);*/
+	}
 	
 }
