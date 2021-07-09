@@ -20,7 +20,8 @@ public abstract class RepositorioGenerico<T> {
     }
     
     public List<T> recover() {
-        return Collections.unmodifiableList(this.elements);
+        //return Collections.unmodifiableList(this.elements);
+    	return this.elements;
     }
     
     public void update(T newElementWithID) {

@@ -5,7 +5,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.HomeNutricionistaController">
    <children>
       <Label fx:id="lbCadastro" layoutX="340.0" layoutY="220.0" prefHeight="27.0" prefWidth="63.0" text="HOME">
@@ -13,9 +12,9 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="btnAdicionarAlimento" layoutX="231.0" layoutY="269.0" mnemonicParsing="false" onAction="#btnAdicionarAlimentoClick" prefHeight="25.0" prefWidth="129.0" text="Adicionar Alimento" />
-      <Button fx:id="btnAcompanharClientes" layoutX="381.0" layoutY="269.0" mnemonicParsing="false" onAction="#btnAcompanharClientesClick" prefHeight="25.0" prefWidth="129.0" text="Acompanhar Clientes" />
-      <Button fx:id="btnAdicionarRefeicao" layoutX="231.0" layoutY="315.0" mnemonicParsing="false" onAction="#btnAdicionarRefeicaoClick" prefHeight="25.0" prefWidth="129.0" text="Adicionar Refeição" />
-      <Button fx:id="btnCriarRefeicao" layoutX="381.0" layoutY="315.0" mnemonicParsing="false" onAction="#btnCriarRefeicaoClick" prefHeight="25.0" prefWidth="129.0" text="Criar Refeição" />
+      <Button fx:id="btnAdicionarAlimento" layoutX="231.0" layoutY="269.0" mnemonicParsing="false" onAction="#btnAdicionarAlimentoCick" prefHeight="25.0" prefWidth="129.0" text="Adicionar Alimento" />
+      <Button fx:id="btnAcompanharClientes" layoutX="381.0" layoutY="269.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="129.0" text="Acompanhar Clientes" />
+      <Button fx:id="btnAdicionarRefeicao" layoutX="231.0" layoutY="315.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="129.0" text="Adicionar Refeição" />
+      <Button fx:id="btnCriarRefeicao" layoutX="381.0" layoutY="315.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="129.0" text="Criar Refeição" />
    </children>
 </Pane>

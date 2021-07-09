@@ -32,7 +32,8 @@ public class HomeNutricionistaController {
 
 	@FXML
 	Button btnCriarRefeicao;
-
+	
+	
 	@FXML
 	public void btnAdicionarAlimentoCick(ActionEvent event) {
     	try {
@@ -46,7 +47,7 @@ public class HomeNutricionistaController {
     		e.printStackTrace();
     	}
 	}
-
+	/*
 	@FXML
 	public void btnAdicionarRefeicaoCick() {
 		//direcionar para tela de adicionar alimentos
@@ -61,5 +62,5 @@ public class HomeNutricionistaController {
 	public void btnCriarRefeicaoCick() {
 		//direcionar para tela de adicionar alimentos
 	}
-	
+	*/
 }

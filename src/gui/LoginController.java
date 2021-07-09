@@ -55,6 +55,7 @@ public class LoginController {
     }
     @FXML
     public void btnCadastroClick (ActionEvent event) {
+    	System.out.println("indo para cadastro");
     	try {
         	BorderPane cadastroPane = FXMLLoader.load(getClass()
         			.getResource("Cadastro.fxml"));
@@ -70,30 +71,19 @@ public class LoginController {
     @FXML
     public void btnLoginClick (ActionEvent event) {
     	boolean verificar = false;
-    	/*
-    	for (Cliente c : this.clientes) {
-    	if (c.getEmail() == txtEmail.getText() && c.getSenha() == txtSenha.getText()) {
-    		
-    		verificar = true;
-        	
-    		try {
-            	BorderPane diarioAlimentarPane = FXMLLoader.load(getClass()
-            			.getResource("DiarioAlimentar.fxml"));
-            	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            	this.scene = new Scene(diarioAlimentarPane);
-            	stage.setScene(scene);
-            	stage.show();
-        	} catch (IOException e) {
-        		e.printStackTrace();
-        	}
-    		break;
-    	} 
-    	}*/
     	
     	if (verificar == false) {
-    		for (Nutricionista n : this.nutricionistas) {
-    	    	if (n.getEmail() == txtEmail.getText() && n.getSenha() == txtSenha.getText()) {
-    	    		
+    		for (Nutricionista n : RepositorioNutricionista.getInstance().recover()) {
+    			String emailR = n.getEmail();
+    			String senhaR = n.getSenha();
+    			String emailI = txtEmail.getText();
+    			String senhaI = txtSenha.getText();
+    			System.out.println(emailR.length());
+    			System.out.println(emailI.length());
+    			System.out.println(senhaR.length());
+    			System.out.println(senhaI.length());
+    			if (emailR.equals(emailI) && senhaR.equals(senhaI)) {
+    				System.out.println("erro ao tentar logar");
     	    		verificar = true;
     	        	
     	    		try {
@@ -114,7 +104,28 @@ public class LoginController {
         	Alert alert = new Alert(AlertType.CONFIRMATION);
         	alert.setTitle("Erro ao tentar logar");
         	alert.setContentText("Email e senha incorretos, digite novamente");
+    	} else {
+    		System.out.println("erro ao tentar logaaaaar");
     	}
+    	/*
+    	for (Cliente c : this.clientes) {
+    	if (c.getEmail() == txtEmail.getText() && c.getSenha() == txtSenha.getText()) {
+    		
+    		verificar = true;
+        	
+    		try {
+            	BorderPane diarioAlimentarPane = FXMLLoader.load(getClass()
+            			.getResource("DiarioAlimentar.fxml"));
+            	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            	this.scene = new Scene(diarioAlimentarPane);
+            	stage.setScene(scene);
+            	stage.show();
+        	} catch (IOException e) {
+        		e.printStackTrace();
+        	}
+    		break;
+    	} 
+    	}*/
     }
     
 }

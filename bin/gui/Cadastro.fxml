@@ -27,7 +27,6 @@
             <TextField fx:id="txtEmailC" layoutX="190.0" layoutY="299.0" promptText="email" />
             <TextField fx:id="txtNomeC" layoutX="190.0" layoutY="267.0" promptText="nome" />
             <TextField fx:id="txtNomeN" layoutX="515.0" layoutY="274.0" promptText="nome" />
-            <PasswordField fx:id="txtEmailN" layoutX="515.0" layoutY="303.0" prefHeight="25.0" prefWidth="149.0" promptText="email" />
             <TextField fx:id="txtCRN" layoutX="515.0" layoutY="400.0" promptText="CRN" />
             <PasswordField fx:id="txtSenhaN" layoutX="515.0" layoutY="333.0" promptText="senha" />
             <PasswordField fx:id="txtSenhaC" layoutX="190.0" layoutY="333.0" promptText="senha" />
@@ -42,6 +41,7 @@
             <Button fx:id="btnConcluirN" layoutX="515.0" layoutY="516.0" mnemonicParsing="false" onAction="#btnConcluirNClick" text="Concluir" />
             <TextField fx:id="txtPesoC" layoutX="190.0" layoutY="400.0" promptText="peso" />
             <TextField fx:id="txtAlturaC" layoutX="190.0" layoutY="434.0" promptText="altura" />
+            <TextField fx:id="txtEmailN" layoutX="515.0" layoutY="303.0" promptText="email" />
          </children>
       </AnchorPane>
    </bottom>

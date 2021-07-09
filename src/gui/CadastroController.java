@@ -36,7 +36,7 @@ public class CadastroController {
     private TextField txtNomeN;
 
     @FXML
-    private PasswordField txtEmailN;
+    private TextField txtEmailN;
 
     @FXML
     private PasswordField txtSenhaN;
@@ -104,7 +104,7 @@ public class CadastroController {
     	Nutricionista n = new Nutricionista(this.txtNomeN.getText(),
     			this.txtEmailN.getText(), this.txtSenhaN.getText(),
     			this.dataNascimentoN.getValue(), Integer.parseInt(this.txtCRN.getText()));
-    	RepositorioUsuario.getInstance().create(n);
+    	RepositorioNutricionista.getInstance().create(n);
     	
     	try {
         	BorderPane cadastroPane = FXMLLoader.load(getClass()
