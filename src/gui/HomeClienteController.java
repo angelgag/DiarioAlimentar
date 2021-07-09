@@ -24,6 +24,9 @@ public class HomeClienteController {
 
     @FXML
     private Button btnPlanoAlimentar;
+    
+    @FXML
+    private Button btnDeslogar;
 
     @FXML
     void btnDiarioAlimentarClick(ActionEvent event) {
@@ -52,5 +55,18 @@ public class HomeClienteController {
     		e.printStackTrace();
     	}
     }
-
+    
+    @FXML
+    void btnDeslogarClick(ActionEvent event) {
+    	try {
+        	Parent root = FXMLLoader.load(getClass()
+        			.getResource("Login.fxml"));
+        	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        	this.scene = new Scene(root);
+        	stage.setScene(scene);
+        	stage.show();
+    	} catch (IOException e) {
+    		e.printStackTrace();
+    	}
+    }
 }

@@ -6,28 +6,28 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.HomeClienteController">
    <top>
       <AnchorPane prefHeight="148.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="273.0" layoutY="85.0" text="HOME">
+            <Label fx:id="lbHome" layoutX="273.0" layoutY="85.0" text="HOME">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
+            <Button fx:id="btnDeslogar" layoutX="517.0" layoutY="22.0" mnemonicParsing="false" onAction="#btnDeslogarClick" text="Deslogar" />
          </children>
       </AnchorPane>
    </top>
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btnDiarioAlimentar" layoutX="223.0" layoutY="20.0" mnemonicParsing="false" onAction="#btnDiarioAlimentarClick" text="Diário Alimentar">
+            <Button fx:id="btnDiarioAlimentar" layoutX="213.0" layoutY="29.0" mnemonicParsing="false" onAction="#btnDiarioAlimentarClick" prefHeight="39.0" prefWidth="175.0" text="Diário Alimentar">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="btnPlanoAlimentar" layoutX="225.0" layoutY="93.0" mnemonicParsing="false" onAction="#btnPlanoAlimentarClick" text="Plano Alimentar">
+            <Button fx:id="btnPlanoAlimentar" layoutX="213.0" layoutY="87.0" mnemonicParsing="false" onAction="#btnPlanoAlimentarClick" text="Planos Alimentares">
                <font>
                   <Font size="18.0" />
                </font>
