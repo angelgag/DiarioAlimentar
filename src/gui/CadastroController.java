@@ -10,12 +10,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -78,43 +80,60 @@ public class CadastroController {
 
     @FXML
     public void btnConcluirCClick (ActionEvent event) throws ElementoJaExisteException {
-    	//add verificao de campos vazios ou nulos
-    	Cliente c = new Cliente(this.txtNomeC.getText(),
-    			this.txtEmailC.getText(), this.txtSenhaC.getText(),
-    			this.dataNascimentoC.getValue(), 
-    			Double.parseDouble(this.txtPesoC.getText()),
-    			Double.parseDouble(this.txtAlturaC.getText()));
-    	RepositorioCliente.getInstance().create(c);
-    	
-    	try {
-        	BorderPane cadastroPane = FXMLLoader.load(getClass()
-        			.getResource("Login.fxml"));
-        	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        	this.scene = new Scene(cadastroPane);
-        	stage.setScene(scene);
-        	stage.show();
-    	} catch (IOException e) {
-    		e.printStackTrace();
+    	//verificacao de campos
+    	if(txtNomeC.getText().trim().isEmpty() || txtSenhaC.getText().trim()
+    			.isEmpty() || txtEmailC.getText().trim().isEmpty() || txtPesoC
+    			.getText().trim().isEmpty() || txtAlturaC.getText().trim()
+    			.isEmpty() ||  dataNascimentoC.getValue() == null) {
+    		Alert alert = new Alert(AlertType.CONFIRMATION);
+        	alert.setTitle("Erro ao cadastrar");
+        	alert.setContentText("Preencha todos os campos antes de concluir.");
+        	alert.show();
+    	} else {
+        	Cliente c = new Cliente(this.txtNomeC.getText(),
+        			this.txtEmailC.getText(), this.txtSenhaC.getText(),
+        			this.dataNascimentoC.getValue(), 
+        			Double.parseDouble(this.txtPesoC.getText()),
+        			Double.parseDouble(this.txtAlturaC.getText()));
+        	RepositorioCliente.getInstance().create(c);
+        	try {
+            	BorderPane cadastroPane = FXMLLoader.load(getClass()
+            			.getResource("Login.fxml"));
+            	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            	this.scene = new Scene(cadastroPane);
+            	stage.setScene(scene);
+            	stage.show();
+        	} catch (IOException e) {
+        		e.printStackTrace();
+        	}
     	}
     }
     
     @FXML
     public void btnConcluirNClick (ActionEvent event) throws ElementoJaExisteException {
-    	//add verificao de campos vazios ou nulos
-    	Nutricionista n = new Nutricionista(this.txtNomeN.getText(),
-    			this.txtEmailN.getText(), this.txtSenhaN.getText(),
-    			this.dataNascimentoN.getValue(), Integer.parseInt(this.txtCRN.getText()));
-    	RepositorioNutricionista.getInstance().create(n);
-    	
-    	try {
-        	BorderPane cadastroPane = FXMLLoader.load(getClass()
-        			.getResource("Login.fxml"));
-        	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        	this.scene = new Scene(cadastroPane);
-        	stage.setScene(scene);
-        	stage.show();
-    	} catch (IOException e) {
-    		e.printStackTrace();
+    	//verificação de campos
+    	if(txtNomeN.getText().trim().isEmpty() || txtSenhaN.getText().trim()
+    			.isEmpty() || txtEmailN.getText().trim().isEmpty() || txtCRN
+    			.getText().trim().isEmpty() ||  dataNascimentoN.getValue() == null) {
+    		Alert alert = new Alert(AlertType.CONFIRMATION);
+        	alert.setTitle("Erro ao cadastrar");
+        	alert.setContentText("Preencha todos os campos antes de concluir.");
+        	alert.show();
+    	} else {
+        	Nutricionista n = new Nutricionista(this.txtNomeN.getText(),
+        			this.txtEmailN.getText(), this.txtSenhaN.getText(),
+        			this.dataNascimentoN.getValue(), Integer.parseInt(this.txtCRN.getText()));
+        	RepositorioNutricionista.getInstance().create(n);
+        	try {
+            	BorderPane cadastroPane = FXMLLoader.load(getClass()
+            			.getResource("Login.fxml"));
+            	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            	this.scene = new Scene(cadastroPane);
+            	stage.setScene(scene);
+            	stage.show();
+        	} catch (IOException e) {
+        		e.printStackTrace();
+        	}
     	}
     }
     
