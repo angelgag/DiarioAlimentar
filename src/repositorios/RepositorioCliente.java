@@ -1,5 +1,6 @@
 package repositorios;
-import java.util.ArrayList;
+import java.time.LocalDate;
+import java.util.List;
 
 import beans.Cliente;
 
@@ -16,4 +17,13 @@ public class RepositorioCliente extends RepositorioGenerico<Cliente>{
 		}
 		return instance;
 	}
+	
+	Cliente c = new Cliente("cli", "cli", "cli", LocalDate.now(), 10, 1);
+	@Override
+    public List<Cliente> recover() {
+        //return Collections.unmodifiableList(this.elements);
+		this.elements.add(c);		
+    	return this.elements;
+    }
+	
 }

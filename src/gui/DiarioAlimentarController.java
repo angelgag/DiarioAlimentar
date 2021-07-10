@@ -4,8 +4,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import beans.Alimento;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+//import javafx.collections.FXCollections;
+//import javafx.collections.ObservableList;
 //import controladores.ControladorRefeicao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,8 +13,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
-import repositorios.RepositorioAlimento;
+//import javafx.scene.control.cell.PropertyValueFactory;
+//import repositorios.RepositorioAlimento;
 
 /*import repositorios.RepositorioAlimento;
 import repositorios.RepositorioUsuario;
@@ -43,8 +43,6 @@ public class DiarioAlimentarController implements Initializable {
 	TableColumn<Alimento, String> tcCDMGordura;
 	@FXML
 	TableColumn<Alimento, String> tcCDMPorcao;
-	@FXML
-	TableColumn<Alimento, String> tcCDMExcluir;
 	
 	@FXML
 	TableView<Alimento> tvAlmoco;
@@ -60,8 +58,6 @@ public class DiarioAlimentarController implements Initializable {
 	TableColumn<Alimento, String> tcAGordura;
 	@FXML
 	TableColumn<Alimento, String> tcAPorcao;
-	@FXML
-	TableColumn<Alimento, String> tcAExcluir;
 	
 	@FXML
 	TableView<Alimento> tvJanta;
@@ -77,8 +73,6 @@ public class DiarioAlimentarController implements Initializable {
 	TableColumn<Alimento, String> tcJGordura;
 	@FXML
 	TableColumn<Alimento, String> tcJPorcao;
-	@FXML
-	TableColumn<Alimento, String> tcJExcluir;
 	
 	@FXML
 	TableView<Alimento> tvLanche;
@@ -94,8 +88,6 @@ public class DiarioAlimentarController implements Initializable {
 	TableColumn<Alimento, String> tcLGordura;
 	@FXML
 	TableColumn<Alimento, String> tcLPorcao;
-	@FXML
-	TableColumn<Alimento, String> tcLExcluir;
 	
 //----------------------------------------------------------------------
 	@FXML
@@ -117,8 +109,13 @@ public class DiarioAlimentarController implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
-		tvListaAlimentos.setItems(getAlimentos());
+		//tvListaAlimentos.setItems(getAlimentos());
 		
+	}
+	/*
+	@FXML
+	public void btnAdicionarCafeDaManhaClick(ActionEvent event) {
+		Alimento alimento = new Alimento();
 	}
 	
 	private ObservableList<Alimento> getAlimentos(){
@@ -133,7 +130,7 @@ public class DiarioAlimentarController implements Initializable {
 				new Alimento("macarrão", 10, 20, 30, 40, 50, 70, 60),
 				new Alimento("maçã", 10, 20, 30, 40, 50, 70, 60),
 				new Alimento("peixe", 10, 20, 30, 40, 50, 70, 60)
-				);*/
+				);
 	}
-	
+	*/
 }

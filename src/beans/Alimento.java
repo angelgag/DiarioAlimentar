@@ -13,7 +13,6 @@ public class Alimento {
 	private SimpleIntegerProperty gordura;
 	private SimpleIntegerProperty calorias;
 	//private Integer idref;
-	private Integer idNutricionista;
 	
 	//para podermos tratar os dados direitinho, esses aux foram criados 
 	protected int auxCarboidrato;
@@ -24,7 +23,7 @@ public class Alimento {
 
 
 	public Alimento(String nome, Integer peso, Integer carboidrato, Integer proteina,
-			Integer gordura, Integer calorias, Integer idNutricionista) {
+			Integer gordura, Integer calorias) {
 		super();
 		this.nome = new SimpleStringProperty(nome);
 		this.peso = new SimpleIntegerProperty(peso);
@@ -33,7 +32,6 @@ public class Alimento {
 		this.gordura = new SimpleIntegerProperty(gordura);
 		this.calorias = new SimpleIntegerProperty(calorias);
 		//this.idref = idref;
-		this.idNutricionista = idNutricionista;
 		
 		this.auxCarboidrato = carboidrato;
 		this.auxPeso = peso;

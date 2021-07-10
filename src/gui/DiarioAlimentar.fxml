@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<Pane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.DiarioAlimentarController">
+<Pane fx:id="DiarioAlimentarPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.DiarioAlimentarController">
    <children>
       <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="850.0">
         <columnConstraints>
@@ -96,9 +96,9 @@
             </Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <TableView fx:id="tvCafeDaManha" layoutX="113.0" prefHeight="402.0" prefWidth="200.0">
+                  <TableView fx:id="tvListaAlimentos" layoutX="113.0" prefHeight="402.0" prefWidth="200.0">
                     <columns>
-                      <TableColumn fx:id="tcListaCafeDaManha" prefWidth="199.0" text="Lista de Alimentos" />
+                      <TableColumn fx:id="tcListaAlimentos" prefWidth="199.0" text="Lista de Alimentos" />
                     </columns>
                   </TableView>
                   <Button fx:id="btnExcluiCafeDaManha" layoutY="56.0" mnemonicParsing="false" onAction="#btnExcluiCafeDaManhaClick" text="Excluir" />
