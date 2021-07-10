@@ -110,9 +110,10 @@ public class LoginController {
     	    }
     	}
     	if (verificar == false) {
-        	Alert alert = new Alert(AlertType.CONFIRMATION);
+    		Alert alert = new Alert(AlertType.CONFIRMATION);
         	alert.setTitle("Erro ao tentar logar");
         	alert.setContentText("Email e senha incorretos, digite novamente");
+        	alert.show();
     	} else {
     		System.out.println("login efetuado com sucesso");
     	}
