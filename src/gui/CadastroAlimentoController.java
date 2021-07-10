@@ -65,6 +65,18 @@ public class CadastroAlimentoController {
         try {
         	RepositorioAlimento.getInstance().create(p);
         	System.out.println("alimento cadastrado");
+        	txtCalorias.clear();
+        	txtCarboidrato.clear();
+        	txtNome.clear();
+        	txtGordura.clear();
+        	txtPeso.clear();
+        	txtProteina.clear();
+
+        	Alert alert = new Alert(AlertType.CONFIRMATION);
+        	alert.setTitle("SUCESSO");
+        	alert.setContentText("Alimento Cadastrado com sucesso");
+        	alert.show();
+        	
         	
         	
         } catch (Exception e) {

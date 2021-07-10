@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<Pane fx:id="DiarioAlimentarPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.DiarioAlimentarController">
+<Pane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.DiarioAlimentarController">
    <children>
       <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="850.0">
         <columnConstraints>

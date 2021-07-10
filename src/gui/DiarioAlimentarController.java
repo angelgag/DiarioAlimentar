@@ -1,28 +1,37 @@
 package gui;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import beans.Alimento;
-//import javafx.collections.FXCollections;
-//import javafx.collections.ObservableList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 //import controladores.ControladorRefeicao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 //import javafx.scene.control.cell.PropertyValueFactory;
-//import repositorios.RepositorioAlimento;
+import repositorios.RepositorioAlimento;
 
-/*import repositorios.RepositorioAlimento;
-import repositorios.RepositorioUsuario;
-import repositorios.RepositorioRefeicao;*/
+//import repositorios.RepositorioAlimento;
+//import repositorios.RepositorioUsuario;
+//import repositorios.RepositorioRefeicao;
 
 public class DiarioAlimentarController implements Initializable {
 	
 	//instanciando repositorios
+
+    private Scene scene;
+    private Stage stage;
 	
 	//criando elementos da tela
 	@FXML
@@ -102,24 +111,65 @@ public class DiarioAlimentarController implements Initializable {
 	}
 	
 	@FXML
-	public void btnVoltarPressionado(ActionEvent event) {
+	public void btnVoltarPressionado(ActionEvent event) throws IOException {
+    	BorderPane homeClientePane = FXMLLoader.load(getClass()
+    			.getResource("HomeCliente.fxml"));
+    	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    	this.scene = new Scene(homeClientePane);
+    	stage.setScene(scene);
+    	stage.show();		
+	}
+	
+	@FXML
+	public void btnExcluiCafeDaManhaClick(ActionEvent event) {
 		
 	}
+	
+	@FXML
+	public void btnAdicionarLancheClick(ActionEvent event) {
+		
+	}
+	
+	@FXML
+	public void btnAdicionarJantaClick(ActionEvent event) {
+		
+	}
+	
+	@FXML
+	public void btnAdicionarAlmocoClick(ActionEvent event) {
+		
+	}
+	
+	@FXML
+	public void btnExcluiLancheClick(ActionEvent event) {
+		
+	}
+	
+	@FXML
+	public void btnExcluiAlmocoClick(ActionEvent event) {
+		
+	}
+	
+	@FXML
+	public void btnExcluiJantaClick(ActionEvent event) {
+		
+	}
+	
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
-		//tvListaAlimentos.setItems(getAlimentos());
+		tvListaAlimentos.setItems(getAlimentos());
 		
 	}
-	/*
+	
 	@FXML
 	public void btnAdicionarCafeDaManhaClick(ActionEvent event) {
 		Alimento alimento = new Alimento();
 	}
 	
 	private ObservableList<Alimento> getAlimentos(){
-		ObservableList<Alimento> alimentos =FXCollections.observableArrayList();
+		ObservableList<Alimento> alimentos = FXCollections.observableArrayList();
 		//double totalCarboidrato, total;
 		alimentos.addAll(RepositorioAlimento.getInstance().recover());
 		return alimentos;
@@ -130,7 +180,7 @@ public class DiarioAlimentarController implements Initializable {
 				new Alimento("macarrão", 10, 20, 30, 40, 50, 70, 60),
 				new Alimento("maçã", 10, 20, 30, 40, 50, 70, 60),
 				new Alimento("peixe", 10, 20, 30, 40, 50, 70, 60)
-				);
+				);*/
 	}
-	*/
+	
 }
