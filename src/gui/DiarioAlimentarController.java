@@ -19,6 +19,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import javafx.scene.control.cell.PropertyValueFactory;
 //import javafx.scene.control.cell.PropertyValueFactory;
 import repositorios.RepositorioAlimento;
 
@@ -102,7 +103,7 @@ public class DiarioAlimentarController implements Initializable {
 	@FXML
 	TableView<Alimento> tvListaAlimentos;
 	@FXML
-	TableColumn<Alimento, String> tcListaAimentos;	
+	TableColumn<Alimento, String> tcListaAlimentos;	
 	
 	//metodo que salva as alteracoes do diario alimentar
 	@FXML
@@ -160,12 +161,21 @@ public class DiarioAlimentarController implements Initializable {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
 		tvListaAlimentos.setItems(getAlimentos());
+		//tcListaAlimentos.get
+		//tvListaAlimentos.getColumns().add(tcListaAimentos);
 		
 	}
 	
 	@FXML
 	public void btnAdicionarCafeDaManhaClick(ActionEvent event) {
-		Alimento alimento = new Alimento();
+		ObservableList<Alimento> alimentoSelecionado;//, todosAlimentos;
+		//todosAlimentos = tvListaAlimentos.getItems();
+		alimentoSelecionado = tvListaAlimentos.getSelectionModel().getSelectedItems(); //pega item selecionado
+		//alimentoSelecionado.forEach(null);
+		tvCafeDaManha.setItems(alimentoSelecionado);
+		
+		//Alimento alimento = new Alimento();
+		//
 	}
 	
 	private ObservableList<Alimento> getAlimentos(){
@@ -174,6 +184,10 @@ public class DiarioAlimentarController implements Initializable {
 		alimentos.addAll(RepositorioAlimento.getInstance().recover());
 		return alimentos;
 		 
+	}
+	
+}
+
 		/*return FXCollections.observableArrayList(
 				new Alimento("feijão", 10, 20, 30, 40, 50, 70, 60),
 				new Alimento("arroz", 10, 20, 30, 40, 50, 70, 60),
@@ -181,6 +195,3 @@ public class DiarioAlimentarController implements Initializable {
 				new Alimento("maçã", 10, 20, 30, 40, 50, 70, 60),
 				new Alimento("peixe", 10, 20, 30, 40, 50, 70, 60)
 				);*/
-	}
-	
-}
